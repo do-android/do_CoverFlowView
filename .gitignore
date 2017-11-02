@@ -1,0 +1,10 @@
+*.class
+*.apk
+bin/
+gen/
+.settings/
+proguard/
+*.classpath
+/doExt_do_CoverFlowView/do_CoverFlowView.zip
+/doExt_do_CoverFlowView/do_build.xml
+/doExt_do_CoverFlowView/libs/docore.jar

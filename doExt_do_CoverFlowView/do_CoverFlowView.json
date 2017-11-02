@@ -1,0 +1,119 @@
+{
+  "ID": "do_CoverFlowView",
+  "IsContainer": "0",
+  "Type": "UI",
+  "Name": "画廊视图",
+  "Version": "Internal",
+  "Description": "这个UI组件包含多个子视图，实现多个子视图之间左右平缓滑动效果；该组件支持设置多个模板视图，要求多个模板大小相同",
+  "Icon": "https://deviceone.blob.core.chinacloudapi.cn/store/D/20160121/do_CoverFlowView/cover.jpg",
+  "IOS": {
+    "Support": 1,
+    "MinVersion": "7"
+  },
+  "Android": {
+    "Support": 1,
+    "MinVersion": "14"
+  },
+  "Windows": {
+    "Support": 0,
+    "MinVersion": ""
+  },
+  "WindowsPhone": {
+    "Support": 0,
+    "MinVersion": ""
+  },
+  "Html": {
+    "Support": 1,
+    "MinVersion": "5.0"
+  },
+  "Properties": [
+    {
+      "ID": "index",
+      "Name": "当前滑动View索引",
+      "Type": "Number",
+      "DefaultValue": "0",
+      "EditType": "1",
+      "Group": "",
+      "Description": "设置滑动视图索引值，默认为0",
+      "Design": {
+        "Type": "UInteger",
+        "Data": []
+      }
+    },
+    {
+      "ID": "isReflection",
+      "Name": "是否显示倒影",
+      "Type": "Bool",
+      "DefaultValue": "false",
+      "EditType": "0",
+      "Group": "",
+      "Description": "设置是否显示倒影，默认false为不显示",
+      "Design": {
+        "Type": "Boolean",
+        "Data": []
+      }
+    },
+    {
+      "ID": "spacing",
+      "Name": "间距",
+      "Type": "Number",
+      "DefaultValue": "30",
+      "EditType": "0",
+      "Group": "",
+      "Description": "页间距",
+      "Design": {
+        "Type": "UInteger",
+        "Data": []
+      }
+    },
+    {
+      "ID": "templates",
+      "Name": "显示视图对应UI模板文件",
+      "Type": "Node",
+      "DefaultValue": "",
+      "EditType": "0",
+      "Group": "",
+      "Description": "一个CoverFlowView可以有多个cell模板，这个属性是一个json array，每一个元素都是一个source ui文件，这些ui文件没有自己的逻辑代码，和CoverFlowView所在的page共用一个脚本环境。\r\n这个属性的格式类似如下：\r\n[\"source://view/cell1.ui\",\"source://view/cell2.ui\",\"source://view/cell3.ui]；多模版的大小需要一致",
+      "Design": {
+        "Type": "Richtext",
+        "Data": []
+      }
+    }
+  ],
+  "Events": [
+    {
+      "ID": "indexChanged",
+      "Description": "滑动显示当前视图后触发该事件",
+      "ReturnType": "String",
+      "ReturnDesc": "返回当前index"
+    }
+  ],
+  "syncMethodes": [
+    {
+      "ID": "bindItems",
+      "Name": "绑定视图模板数据",
+      "Description": "绑定数据类型为do_ListData实例",
+      "ReturnType": "",
+      "ReturnDesc": "",
+      "Paras": [
+        {
+          "ID": "data",
+          "Name": "数据",
+          "Type": "Node",
+          "Required": 0,
+          "DefaultValue": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": "refreshItems",
+      "Name": "刷新数据",
+      "Description": "支持动态刷新当前视图显示数据",
+      "ReturnType": "",
+      "ReturnDesc": "",
+      "Paras": []
+    }
+  ],
+  "asyncMethodes": []
+}
